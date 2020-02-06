@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import {
   Button,
   Container,
@@ -40,12 +41,19 @@ export default class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as='a' active>
-            Home
-          </Menu.Item>
-          <Menu.Item as='a'>Work</Menu.Item>
-          <Menu.Item as='a'>Company</Menu.Item>
-          <Menu.Item as='a'>Careers</Menu.Item>
+          {this.props.menuItems.map(
+            (item) => (
+              <Menu.Item
+                as='a'
+                key={item.name}
+                name={item.name}
+                active={this.props.activeItem === item.name}
+                onClick={this.props.handleItemClick}
+              >
+                <Link to={item.link}>{item.name}</Link>
+              </Menu.Item>
+            )
+          )}
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>

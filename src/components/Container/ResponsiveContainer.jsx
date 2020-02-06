@@ -1,6 +1,7 @@
 import React from 'react';
 import DesktopContainer from './DesktopContainer';
 import MobileContainer from './MobileContainer';
+import Footer from './Footer';
 
 export default class ResponsiveContainer extends React.Component {
   menuItems = [
@@ -24,6 +25,7 @@ export default class ResponsiveContainer extends React.Component {
           menuItems={this.menuItems}
         >
           {this.props.children}
+          <Footer/>
         </DesktopContainer>
 
         <MobileContainer
@@ -32,6 +34,7 @@ export default class ResponsiveContainer extends React.Component {
           menuItems={this.menuItems}
         >
           {this.props.children}
+          <Footer/>
         </MobileContainer>
       </div>
     )

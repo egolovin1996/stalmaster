@@ -9,9 +9,9 @@ import {
   Visibility,
   Header
 } from 'semantic-ui-react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons'
+import logo from './logo.png';
 
 
 const getWidth = () => {
@@ -38,29 +38,28 @@ export default class DesktopContainer extends React.Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            inverted
             textAlign='center'
-            style={{ minHeight: 90, padding: '1em 0em' }}
+            inverted
+            style={{ minHeight: 76 }}
             vertical
           >
             <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
+              fixed='top'
+              inverted
+              borderless
+              pointing
+              secondary
+              style={{ minHeight: 70, padding: '1em 0em'}}
               size='large'
             >
               <Container>
-                <Menu.Item>
-                  <Button size='massive' as='a' inverted={!fixed}>
-                    <FontAwesomeIcon icon={faDoorOpen}/> СТАЛЬМАСТЕР
-                  </Button>
-                </Menu.Item>
+                <Menu.Item><FontAwesomeIcon icon={faDoorOpen} size="lg"/></Menu.Item>
+                <Menu.Item header>СТАЛЬМАСТЕР</Menu.Item>
                 <Menu.Menu position='right'>
-
                 {this.props.menuItems.map(
                   (item) => (
                     <Menu.Item
+                      as='a'
                       key={item.name}
                       name={item.name}
                       active={this.props.activeItem === item.name}
@@ -75,8 +74,6 @@ export default class DesktopContainer extends React.Component {
             </Menu>
           </Segment>
         </Visibility>
-        
-
         {children}
       </Responsive>
     );
