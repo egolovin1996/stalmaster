@@ -9,6 +9,8 @@ import {
   Segment,
   Sidebar
 } from 'semantic-ui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDoorOpen } from '@fortawesome/free-solid-svg-icons'
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
@@ -43,15 +45,17 @@ export default class MobileContainer extends Component {
         >
           {this.props.menuItems.map(
             (item) => (
-              <Menu.Item
-                as='a'
-                key={item.name}
-                name={item.name}
-                active={this.props.activeItem === item.name}
-                onClick={this.props.handleItemClick}
-              >
-                <Link to={item.link}>{item.name}</Link>
-              </Menu.Item>
+              <Link to={item.link}>
+                <Menu.Item
+                  as='a'
+                  key={item.name}
+                  name={item.name}
+                  active={this.props.activeItem === item.name}
+                  onClick={this.props.handleItemClick}
+                >
+                  {item.name}
+                </Menu.Item>
+              </Link>
             )
           )}
         </Sidebar>
@@ -60,7 +64,7 @@ export default class MobileContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 90, padding: '1em 0em' }}
+            style={{ minHeight: 70, padding: '1em 0em' }}
             vertical
           >
             <Container>
@@ -69,12 +73,10 @@ export default class MobileContainer extends Component {
                   <Icon name='sidebar' />
                 </Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
+                  <FontAwesomeIcon icon={faDoorOpen} size="lg"/>
+                </Menu.Item>
+                <Menu.Item header>
+                  <Link to='/'>СТАЛЬМАСТЕР</Link>
                 </Menu.Item>
               </Menu>
             </Container>

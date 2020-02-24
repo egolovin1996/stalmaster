@@ -13,31 +13,25 @@ export default function Footer() {
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
-              </List>
+            <Grid.Column width={13}>
+            <Header inverted as='h4' content='Контакты' />
+              <p>
+                г. Екатеринбург ул. Восточная, 46, тел. +7 (343) 350–60–56
+              </p> 
+              <p>
+                г. Екатеринбург ул. Сурикова, 31, тел. +7 (343) 251–02–95
+              </p> 
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
               <Header as='h4' inverted>
-                Footer Header
+                © СТАЛЬМАСТЕР
               </Header>
               <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
+                Все права защищены
               </p>
+              <p>
+                1994 - 2020
+              </p> 
             </Grid.Column>
           </Grid.Row>
         </Grid>

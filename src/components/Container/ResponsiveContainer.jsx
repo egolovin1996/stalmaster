@@ -12,7 +12,12 @@ export default class ResponsiveContainer extends React.Component {
     {name: "Контакты", link: "/contacts"},
   ]
 
-  state = { activeItem: 'О нас' }
+  constructor(props){
+    super(props);
+    
+    var activeItem = this.menuItems.filter(item => item.link === window.location.pathname)[0];
+    this.state = {activeItem: activeItem.name};
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 

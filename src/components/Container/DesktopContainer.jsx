@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import {
-  Button,
   Container,
   Menu,
   Responsive,
   Segment,
-  Visibility,
-  Header
+  Visibility
 } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons'
-import logo from './logo.png';
-
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
@@ -44,29 +40,31 @@ export default class DesktopContainer extends React.Component {
             vertical
           >
             <Menu
-              fixed='top'
               inverted
               borderless
               pointing
               secondary
-              style={{ minHeight: 70, padding: '1em 0em'}}
               size='large'
             >
               <Container>
                 <Menu.Item><FontAwesomeIcon icon={faDoorOpen} size="lg"/></Menu.Item>
-                <Menu.Item header>СТАЛЬМАСТЕР</Menu.Item>
+                <Menu.Item header>
+                  <Link to='/'>СТАЛЬМАСТЕР</Link>
+                </Menu.Item>
                 <Menu.Menu position='right'>
                 {this.props.menuItems.map(
                   (item) => (
-                    <Menu.Item
-                      as='a'
-                      key={item.name}
-                      name={item.name}
-                      active={this.props.activeItem === item.name}
-                      onClick={this.props.handleItemClick}
-                    >
-                      <Link to={item.link}>{item.name}</Link>
-                    </Menu.Item>
+                    <Link to={item.link} >
+                      <Menu.Item
+                        as='a'
+                        key={item.link}
+                        name={item.name}
+                        active={this.props.activeItem === item.name}
+                        onClick={this.props.handleItemClick}
+                      >
+                        {item.name}
+                      </Menu.Item>
+                    </Link>
                   )
                 )}
                 </Menu.Menu>
