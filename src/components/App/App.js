@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ResponsiveContainer from '../Container/ResponsiveContainer';
 import Home from '../Home/Home';
+import Gallery from '../Gallery/Gallery'
 import Contacts from '../Contacts/Contacts';
 import { YMaps } from "react-yandex-maps";
 
@@ -14,6 +15,9 @@ function App() {
           <Switch>
             <Route path='/contacts'>
               <Contacts />
+            </Route>
+            <Route path='/gallery'>
+              <Gallery />
             </Route>
             <Route path='/'>
               <Home />

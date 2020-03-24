@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.zoom:hover {
+  transform: scale(1.05);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
