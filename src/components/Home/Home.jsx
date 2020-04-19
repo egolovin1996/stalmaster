@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-  Button,
-  Grid,
-  Image,
-  Segment,
-  Header
-} from 'semantic-ui-react';
 import Fire from './Fire';
 import Splitter from './Splitter';
 

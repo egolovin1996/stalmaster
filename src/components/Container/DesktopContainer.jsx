@@ -24,7 +24,6 @@ export default class DesktopContainer extends React.Component {
 
   render() {
     const { children } = this.props;
-    const { fixed } = this.state;
 
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
@@ -54,7 +53,9 @@ export default class DesktopContainer extends React.Component {
                 <Menu.Menu position='right'>
                 {this.props.menuItems.map(
                   (item) => (
-                    <Link to={item.link} >
+                    <Link 
+                      key={item.link}
+                      to={item.link} >
                       <Menu.Item
                         as='a'
                         key={item.link}

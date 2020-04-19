@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import {
-  Button,
   Container,
   Icon,
   Menu,
@@ -45,7 +44,9 @@ export default class MobileContainer extends Component {
         >
           {this.props.menuItems.map(
             (item) => (
-              <Link to={item.link}>
+              <Link 
+                key={item.link}
+                to={item.link}>
                 <Menu.Item
                   as='a'
                   key={item.name}

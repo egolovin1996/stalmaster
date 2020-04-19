@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 import {
   Grid,
   Image,
   Segment
 } from 'semantic-ui-react'
-import test from '../../images/test.jpg';
 
 function importAll(r) {
   let images = [];
@@ -13,9 +13,7 @@ function importAll(r) {
   return images;
 }
 
-//const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg|JPE?G)$/));
-
-const images = [ test, test, test, test, test, test, test, test ]
+const images = importAll(require.context('../../images', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
 class Gallery extends Component {
   constructor(props) {
@@ -31,7 +29,7 @@ class Gallery extends Component {
     const { photoIndex, isOpen } = this.state;
     const imagesMatrix = images.reduce(
       (rows, key, index) =>
-        (index % 3 == 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
+        (index % 3 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
         rows,
       []
     );
@@ -39,20 +37,24 @@ class Gallery extends Component {
     return (
       <Segment style={{ padding: "4em 0em" }} vertical>
         <Grid container stackable verticalAlign="middle">
-          {imagesMatrix.map((imagesRow, index) => {
+          {imagesMatrix.map((imagesRow, rowIndex) => {
             return (
               <Grid.Row centered columns={3}>
-                {imagesRow.map(image => {
+                {imagesRow.map((image, imageIndex) => {
                   return (
-                    <Grid.Column>
-                      
+                    <Grid.Column
+                      key={(rowIndex * 3) + imageIndex}
+                      onClick={() => this.setState({ isOpen: true, photoIndex: ((rowIndex * 3) + imageIndex)})}
+                    >
                       <Image
+                        style={{cursor: 'pointer'}}
                         className="zoom"
                         bordered
                         rounded
+                        fluid
                         size="large"
-                        src={test}
-                        onClick={() => this.setState({ isOpen: true, photoIndex: index })}
+                        src={image}
+                        
                       />
                     </Grid.Column>
                   );
@@ -68,14 +70,14 @@ class Gallery extends Component {
                 prevSrc={images[(photoIndex + images.length - 1) % images.length]}
                 onCloseRequest={() => this.setState({ isOpen: false })}
                 onMovePrevRequest={() =>
-                this.setState({
-                    photoIndex: (photoIndex + images.length - 1) % images.length,
-                })
+                  this.setState({
+                      photoIndex: (photoIndex + images.length - 1) % images.length,
+                  })
                 }
                 onMoveNextRequest={() =>
-                this.setState({
-                    photoIndex: (photoIndex + 1) % images.length,
-                })
+                  this.setState({
+                      photoIndex: (photoIndex + 1) % images.length,
+                  })
                 }
             />
             )}

@@ -5,6 +5,7 @@ import ResponsiveContainer from '../Container/ResponsiveContainer';
 import Home from '../Home/Home';
 import Gallery from '../Gallery/Gallery'
 import Contacts from '../Contacts/Contacts';
+import Doors from '../Doors/Doors';
 import { YMaps } from "react-yandex-maps";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
             </Route>
             <Route path='/gallery'>
               <Gallery />
+            </Route>
+            <Route path='/doors'>
+              <Doors />
             </Route>
             <Route path='/'>
               <Home />

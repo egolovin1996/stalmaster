@@ -2,12 +2,9 @@ import React from 'react';
 import {
   Button,
   Grid,
-  Image,
   Segment,
   Header
 } from 'semantic-ui-react';
-import oneDoor from './Images/oneDoor.png';
-import twoDoor from './Images/twoDoor.png';
 
 export default class Splitter extends React.Component {
     render() {

@@ -1,28 +1,29 @@
-import React from 'react';
-import DesktopContainer from './DesktopContainer';
-import MobileContainer from './MobileContainer';
-import Footer from './Footer';
+import React from "react";
+import DesktopContainer from "./DesktopContainer";
+import MobileContainer from "./MobileContainer";
+import Footer from "./Footer";
 
 export default class ResponsiveContainer extends React.Component {
   menuItems = [
-    {name: "О нас", link: "/"},
-    {name: "Сейф двери", link: "/safe"},
-    {name: "Противопожарные двери", link: "/fire"},
-    {name: "Галерея", link: "/gallery"},
-    {name: "Контакты", link: "/contacts"},
-  ]
+    { name: "О нас", link: "/" },
+    { name: "Противопожарные двери", link: "/doors" },
+    { name: "Галерея", link: "/gallery" },
+    { name: "Контакты", link: "/contacts" },
+  ];
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    
-    var activeItem = this.menuItems.filter(item => item.link === window.location.pathname)[0];
-    this.state = {activeItem: activeItem.name};
+
+    var activeItem = this.menuItems.filter(
+      (item) => item.link === window.location.pathname
+    )[0];
+    this.state = { activeItem: activeItem.name };
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <DesktopContainer
           activeItem={this.state.activeItem}
@@ -30,7 +31,7 @@ export default class ResponsiveContainer extends React.Component {
           menuItems={this.menuItems}
         >
           {this.props.children}
-          <Footer/>
+          <Footer />
         </DesktopContainer>
 
         <MobileContainer
@@ -39,9 +40,9 @@ export default class ResponsiveContainer extends React.Component {
           menuItems={this.menuItems}
         >
           {this.props.children}
-          <Footer/>
+          <Footer />
         </MobileContainer>
       </div>
-    )
+    );
   }
 }
