@@ -6,6 +6,7 @@ import Home from '../Home/Home';
 import Gallery from '../Gallery/Gallery'
 import Contacts from '../Contacts/Contacts';
 import Doors from '../Doors/Doors';
+import Hatches from '../Hatches/Hatches';
 import { YMaps } from "react-yandex-maps";
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path='/doors'>
               <Doors />
+            </Route>
+            <Route path='/hatchs'>
+              <Hatches />
             </Route>
             <Route path='/'>
               <Home />

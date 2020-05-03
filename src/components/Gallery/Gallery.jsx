@@ -13,7 +13,7 @@ function importAll(r) {
   return images;
 }
 
-const images = importAll(require.context('../../images', false, /\.(png|jpe?g|svg|JPE?G)$/));
+const images = importAll(require.context('../../gallery', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
 class Gallery extends Component {
   constructor(props) {

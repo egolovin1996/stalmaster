@@ -7,6 +7,7 @@ export default class ResponsiveContainer extends React.Component {
   menuItems = [
     { name: "О нас", link: "/" },
     { name: "Противопожарные двери", link: "/doors" },
+    { name: "Противопожарные люки", link: "/hatchs" },
     { name: "Галерея", link: "/gallery" },
     { name: "Контакты", link: "/contacts" },
   ];
@@ -21,7 +22,6 @@ export default class ResponsiveContainer extends React.Component {
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
     return (
       <div>
