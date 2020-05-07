@@ -7,8 +7,8 @@ export default class Home extends React.Component {
     render() {
         return(
           <div>
-            <Fire/>
-            <Splitter/>
+            <Fire />
+            <Splitter />
             <Sert />
           </div>
         )

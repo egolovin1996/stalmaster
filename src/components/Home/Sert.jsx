@@ -14,7 +14,7 @@ export default class Sert extends React.Component {
           <Segment style={{ padding: '3em' }} vertical>
             <Grid centered columns='equal'>
               <Grid.Row textAlign='center'>
-                <Header as='h3' style={{ fontSize: '2em' }}>
+                <Header as='h3' style={{ fontSize: '1.5em' }}>
                     Сертификат соответсвия
                 </Header>
               </Grid.Row>

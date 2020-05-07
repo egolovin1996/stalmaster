@@ -24,7 +24,7 @@ function App() {
             <Route path='/doors'>
               <Doors />
             </Route>
-            <Route path='/hatchs'>
+            <Route path='/hatches'>
               <Hatches />
             </Route>
             <Route path='/'>

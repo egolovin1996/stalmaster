@@ -18,6 +18,10 @@ const mapStateManufacture = {
 };
 
 export default class Contacts extends React.Component {
+    componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+
     render() {
         return(
           <Segment style={{ padding: '3em 0em' }} vertical>

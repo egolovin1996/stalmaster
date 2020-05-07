@@ -47,6 +47,7 @@ class Gallery extends Component {
                       onClick={() => this.setState({ isOpen: true, photoIndex: ((rowIndex * 3) + imageIndex)})}
                     >
                       <Image
+                        key={(rowIndex * 3) + imageIndex}
                         style={{cursor: 'pointer'}}
                         className="zoom"
                         bordered

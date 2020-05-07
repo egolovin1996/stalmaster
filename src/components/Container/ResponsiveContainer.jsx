@@ -2,12 +2,13 @@ import React from "react";
 import DesktopContainer from "./DesktopContainer";
 import MobileContainer from "./MobileContainer";
 import Footer from "./Footer";
+import { withRouter } from "react-router";
 
-export default class ResponsiveContainer extends React.Component {
+class ResponsiveContainer extends React.Component {
   menuItems = [
     { name: "О нас", link: "/" },
     { name: "Противопожарные двери", link: "/doors" },
-    { name: "Противопожарные люки", link: "/hatchs" },
+    { name: "Противопожарные люки", link: "/hatches" },
     { name: "Галерея", link: "/gallery" },
     { name: "Контакты", link: "/contacts" },
   ];
@@ -18,10 +19,21 @@ export default class ResponsiveContainer extends React.Component {
     var activeItem = this.menuItems.filter(
       (item) => item.link === window.location.pathname
     )[0];
-    this.state = { activeItem: activeItem.name };
+    this.state = { activeItem: activeItem.link };
+  }
+
+  componentDidMount() {
+    this.unlisten = this.props.history.listen((location, action) => {
+      this.setState({activeItem: location.pathname});
+    });
+  }
+
+  componentWillUnmount() {
+    this.unlisten();
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   render() {
     return (
       <div>
@@ -46,3 +58,5 @@ export default class ResponsiveContainer extends React.Component {
     );
   }
 }
+
+export default withRouter(ResponsiveContainer);

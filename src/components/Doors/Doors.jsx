@@ -10,7 +10,7 @@ export default class Doors extends React.Component {
     return (
       <Segment style={{ padding: "3em 0em" }} vertical>
         {doors.map((item, index) => (
-          <Container>
+          <Container key={item.name}>
             <Door
               key={item.name}
               name={item.name}

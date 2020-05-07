@@ -51,8 +51,7 @@ export default class MobileContainer extends Component {
                   as='a'
                   key={item.name}
                   name={item.name}
-                  active={this.props.activeItem === item.name}
-                  onClick={this.props.handleItemClick}
+                  active={this.props.activeItem === item.link}
                 >
                   {item.name}
                 </Menu.Item>

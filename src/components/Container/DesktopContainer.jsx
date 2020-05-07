@@ -60,8 +60,7 @@ export default class DesktopContainer extends React.Component {
                         as='a'
                         key={item.link}
                         name={item.name}
-                        active={this.props.activeItem === item.name}
-                        onClick={this.props.handleItemClick}
+                        active={this.props.activeItem === item.link}
                       >
                         {item.name}
                       </Menu.Item>
