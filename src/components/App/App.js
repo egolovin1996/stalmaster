@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import ResponsiveContainer from '../Container/ResponsiveContainer';
 import Home from '../Home/Home';
 import Gallery from '../Gallery/Gallery'
@@ -11,7 +11,7 @@ import { YMaps } from "react-yandex-maps";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ResponsiveContainer>
         <YMaps>
           <Switch>
@@ -33,7 +33,7 @@ function App() {
           </Switch>
         </YMaps>
       </ResponsiveContainer>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

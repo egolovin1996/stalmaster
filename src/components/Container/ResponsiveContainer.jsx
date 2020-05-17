@@ -17,7 +17,7 @@ class ResponsiveContainer extends React.Component {
     super(props);
 
     var activeItem = this.menuItems.filter(
-      (item) => item.link === window.location.pathname
+      (item) => item.link === window.location.hash.substr(1)
     )[0];
     this.state = { activeItem: activeItem.link };
   }
