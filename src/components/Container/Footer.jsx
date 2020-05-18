@@ -20,6 +20,9 @@ export default function Footer() {
               <p>
                 г. Екатеринбург ул. Сурикова, 31, тел. +7 (343) 251–02–95
               </p> 
+              <p>
+                г. Среднеуральск ул. Полевой проезд, 5, тел. +7 (912) 615–76–71
+              </p> 
             </Grid.Column>
             <Grid.Column width={3}>
               <Header as='h4' inverted>

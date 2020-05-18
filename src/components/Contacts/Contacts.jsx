@@ -65,7 +65,7 @@ export default class Contacts extends React.Component {
                 </Grid.Column>
                 <Grid.Column width={4}>
                   <p style={{ fontSize: '1.35em' }}>
-                    <Icon name='phone' />+ 7 (343) 350–60–56
+                    <Icon name='phone' />+7 (343) 350–60–56
                   </p>
                 </Grid.Column>
               </Grid.Row>
@@ -78,7 +78,7 @@ export default class Contacts extends React.Component {
                 </Grid.Column>
                 <Grid.Column width={4}>
                   <p style={{ fontSize: '1.35em' }}>
-                  <Icon name='phone' />+ 7 (343) 251–02–95
+                  <Icon name='phone' />+7 (343) 251–02–95
                   </p>
                 </Grid.Column>
               </Grid.Row>
@@ -94,11 +94,18 @@ export default class Contacts extends React.Component {
                   Производство
                 </Header>
               </Grid.Row>
-
+              
               <Grid.Row>
-                <p style={{ fontSize: '1.35em' }}>
-                  <Icon name='map marker alternate' />г. Среднеуральск ул. Полевой проезд, 5
-                </p>
+                <Grid.Column width={6}>
+                  <p style={{ fontSize: '1.35em' }}>
+                    <Icon name='map marker alternate' />г. Среднеуральск ул. Полевой проезд, 5
+                 </p>
+                </Grid.Column>
+                <Grid.Column width={4}>
+                  <p style={{ fontSize: '1.35em' }}>
+                    <Icon name='phone' />+7 (912) 615–76–71
+                  </p>
+                </Grid.Column>
               </Grid.Row>
 
               <Grid.Row>
